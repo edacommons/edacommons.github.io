@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>rawast — one engine for the file formats every EDA tool re-implements</title>
+<meta name="description" content="A bidirectional, grammar-driven engine for EDA file formats: GDSII, LEF/DEF, Tcl, SystemVerilog. Grammars are data; the PoC parses 100% of a 3,132-file production corpus.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='1' y='1' width='14' height='14' rx='3' fill='%233e63dd'/%3E%3Ctext x='8' y='12' font-family='monospace' font-size='11' font-weight='bold' fill='white' text-anchor='middle'%3E%7B%7D%3C/text%3E%3C/svg%3E">
+<style>
+  :root { --bg:#ffffff; --fg:#1a1f24; --muted:#57606a; --line:#d0d7de;
+          --card:#f6f8fa; --accent:#3e63dd; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --line:#30363d;
+            --card:#161b22; --accent:#6e8bff; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:17px/1.6 -apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:44rem; margin:0 auto; padding:3rem 1.2rem 2rem; }
+  h1 { font-size:2rem; margin:.2rem 0 0; font-family:ui-monospace,"SF Mono",Menlo,monospace; }
+  .tag { font-size:1.15rem; color:var(--muted); margin:.3rem 0 1.6rem; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:8px;
+        padding:.8rem 1rem; overflow-x:auto;
+        font:.82rem/1.5 ui-monospace,"SF Mono",Menlo,monospace; }
+  .rule { border-left:3px solid var(--accent); background:var(--card);
+          padding:.7rem 1rem; border-radius:0 8px 8px 0; margin:1.4rem 0; }
+  section h2 { font-size:.8rem; text-transform:uppercase; letter-spacing:.09em;
+               color:var(--muted); margin:2.2rem 0 .8rem; }
+  .cards { display:grid; gap:.7rem; }
+  a.card { display:block; border:1px solid var(--line); border-radius:8px;
+           padding:.75rem 1rem; text-decoration:none; color:var(--fg);
+           background:var(--card); transition:border-color .15s; }
+  a.card:hover { border-color:var(--accent); }
+  a.card b { display:block; }
+  a.card span { color:var(--muted); font-size:.92rem; }
+  p a, footer a { color:var(--accent); text-decoration:none; }
+  p a:hover, footer a:hover { text-decoration:underline; }
+  footer { max-width:44rem; margin:0 auto; padding:1.2rem;
+           border-top:1px solid var(--line); color:var(--muted); font-size:.85rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>rawast</h1>
+  <p class="tag">One engine for the file formats every EDA tool
+  re-implements.</p>
+
+  <p>Every EDA tool carries its own parsers for the same handful of
+  formats — GDSII, LEF, DEF, Tcl, SystemVerilog — each a private
+  re-implementation with its own dialect quirks and its own bugs.
+  rawast is one bidirectional, grammar-driven engine for all of them:
+  <b>grammars are data</b>, parsing and re-emitting are the same
+  machinery run in opposite directions, and adding a format means
+  writing a grammar, not a parser.</p>
+
+  <div class="rule">The proof-of-concept reads <b>100% of a 3,132-file
+  production corpus</b> — real designs, real dialects — and a target
+  ships when the corpus proves it, not before.</div>
+
+  <section>
+    <h2>The project</h2>
+    <div class="cards">
+      <a class="card" href="https://github.com/edacommons/rawast">
+        <b>edacommons/rawast</b>
+        <span>The repository: engine, grammars, corpus results.</span></a>
+      <a class="card" href="https://github.com/edacommons/rawast/issues?q=label%3Asponsorable">
+        <b>Sponsorable milestones</b>
+        <span>Named targets, each an issue you can subscribe to —
+        "done" is objective: a milestone ships when the corpus proves
+        it. Sponsored work lands in the open tree immediately.</span></a>
+      <a class="card" href="https://orconf.org/">
+        <b>ORConf 2026</b>
+        <span>rawast talk — Ghent, September 11–13.</span></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <a href="https://github.com/edacommons">GitHub</a> ·
+  <a href="https://github.com/sponsors/lanserge">Sponsor</a> ·
+  <a href="https://serge.rabyking.com">Serge Rabyking</a> ·
+  <a href="mailto:s.rabykin@gmail.com">s.rabykin@gmail.com</a>
+</footer>
+</body>
+</html>
